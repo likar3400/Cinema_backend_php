@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Майкл — CineMax</title>
+    <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
+    <meta name="csrf" content="80a82ba030079782fb758cd48419725a5376faeea0a67a1a69c8832c355d8a6c">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-inner">
+        <a href="http://localhost:8888/course_work_CINEMA/course_work/public/" class="brand">🎬 CineMax</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/"         >Головна</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies"   class="active">Афіша</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/schedule" >Розклад</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/news"     >Новини</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/shop"     >🍿 Магазин</a></li>
+                            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/login">Вхід</a></li>
+                <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/register" class="nav-register">Реєстрація</a></li>
+                    </ul>
+        <button class="burger" id="burger" aria-label="Меню">☰</button>
+    </div>
+</nav>
+
+
+<main class="main">
+    <div class="container">
+        <div class="movie-detail">
+  <div class="detail-top">
+          <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e62e4a53a9.30317160.jpeg" alt="Майкл" class="detail-poster">
+        <div class="detail-info">
+      <span class="age-badge age-badge-lg">12+</span>
+      <h1>Майкл</h1>
+      <p class="detail-genre">🎭 Біографія/Музика</p>
+        <p>⏱ 148 хвилин &nbsp;⭐ <span id="movieRating">7.8</span>/10</p>
+      <p>📅 20.06.2026</p>      <p class="detail-desc">Байопік про життя та творчість Майкла Джексона — короля поп-музики. Фільм охоплює злети та падіння однієї з найвидатніших зірок в історії музики.</p>
+            <a href="https://youtu.be/3zOLzsbOleM?si=9_xxMXuTTExPXn4R" class="btn btn-outline" target="_blank">▶ Трейлер</a>
+          </div>
+  </div>
+
+  <h2 class="section-title mt-3">Найближчі сеанси</h2>
+  <div class="filter-bar">
+    <label>Дата:</label>
+    <input type="date" id="fDate" value="2026-05-27" min="2026-05-27">
+  </div>
+
+  <div class="sessions-grid" id="sessContainer">
+        <div class="sess-card">
+      <div class="sess-time">22.06 13:00</div>
+      <div class="sess-meta">Зала 3 — Стандарт · 2D · uk</div>
+      <div class="sess-price">
+        <span class="price-std">Стд: 125 грн</span>
+        <span class="price-vip">VIP: 200 грн</span>      </div>
+              <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+          </div>
+        <div class="sess-card">
+      <div class="sess-time">22.06 17:00</div>
+      <div class="sess-meta">Зала 2 — VIP · 2D · uk</div>
+      <div class="sess-price">
+        <span class="price-std">Стд: 160 грн</span>
+        <span class="price-vip">VIP: 260 грн</span>      </div>
+              <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+          </div>
+          </div>
+</div>
+
+
+<section class="section reviews-section" id="reviews">
+  <h2 class="section-title">💬 Відгуки</h2>
+
+  <div id="reviewList">
+                <div class="review-card" id="rc-2">
+        <div class="review-header">
+          <strong>Ковтун Валентин</strong>
+          <span class="review-stars">⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</span>
+          <span class="review-rating">10/10</span>
+          <span class="review-date">27.05.2026</span>
+                  </div>
+          <p class="review-body">Класний фільм!Актор підібраний -ідеально!!!!</p>
+      </div>
+            </div>
+
+    <p class="mt-2"><a href="http://localhost:8888/course_work_CINEMA/course_work/public/login">Увійдіть</a>, щоб залишити відгук.</p>
+  </section>
+
+<script>
+const MOVIE_ID = 6;
+const IS_AUTH  = false;
+var APP_URL_JS = 'http://localhost:8888/course_work_CINEMA/course_work/public';
+
+document.getElementById('fDate').addEventListener('change', function () {
+  const c = document.getElementById('sessContainer');
+  c.innerHTML = '<p class="loading">⏳ Завантаження…</p>';
+  fetch(`${APP_URL_JS}/api/sessions?movie_id=${MOVIE_ID}&date=${this.value}`, {
+    headers: {'X-Requested-With':'XMLHttpRequest'}
+  }).then(r=>r.json()).then(d=>{
+    if (!d.sessions || !d.sessions.length) { c.innerHTML='<p class="empty-msg">Сеансів у цей день немає.</p>'; return; }
+    c.innerHTML = d.sessions.map(s => {
+      const t = new Date(s.starts_at.replace(' ','T'));
+      const tf = t.toLocaleDateString('uk-UA',{day:'2-digit',month:'2-digit'})+' '+t.toLocaleTimeString('uk-UA',{hour:'2-digit',minute:'2-digit'});
+      const vip = s.price_vip>0 ? `<span class="price-vip">VIP: ${parseInt(s.price_vip)} грн</span>` : '';
+      const btn = IS_AUTH
+        ? `<a href="${APP_URL_JS}/booking/${s.id}" class="btn btn-primary btn-sm">Обрати місце</a>`
+        : `<a href="${APP_URL_JS}/login" class="btn btn-outline btn-sm">Увійти</a>`;
+      return `<div class="sess-card">
+        <div class="sess-time">${tf}</div>
+        <div class="sess-meta">${s.hall_name} · ${s.format} · ${s.language}</div>
+        <div class="sess-price"><span class="price-std">Стд: ${parseInt(s.price)} грн</span>${vip}</div>
+        ${btn}</div>`;
+    }).join('');
+  }).catch(()=>{ c.innerHTML='<p class="empty-msg">Помилка завантаження.</p>'; });
+});
+
+
+function submitReview() {
+  const rating = parseInt(document.getElementById('rRating').value);
+  const body   = document.getElementById('rBody').value.trim();
+  const msg    = document.getElementById('reviewMsg');
+
+  if (!rating || rating < 1 || rating > 10) { showMsg(msg,'Рейтинг від 1 до 10',true); return; }
+  if (body.length < 10) { showMsg(msg,'Відгук мінімум 10 символів',true); return; }
+
+  fetch(`${APP_URL_JS}/api/reviews/add`, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json','X-Requested-With':'XMLHttpRequest'},
+      body: JSON.stringify({movie_id: MOVIE_ID, rating, body, "_csrf": CSRF_TOKEN}),
+  }).then(r => r.json()).then(d => {
+    if (d.success) {
+        const ratingEl = document.getElementById('movieRating');
+        if (ratingEl && d.avg_rating) {
+            ratingEl.textContent = d.avg_rating;
+        }
+      const stars = '⭐'.repeat(d.rating);
+      const card = `<div class="review-card" id="rc-${d.review_id}">
+        <div class="review-header">
+          <strong>${d.user_name}</strong>
+          <span class="review-stars">${stars}</span>
+          <span class="review-rating">${d.rating}/10</span>
+          <span class="review-date">${d.created_at}</span>
+        </div>
+        <p class="review-body">${d.body.replace(/\n/g,'<br>')}</p>
+      </div>`;
+      const noRev = document.getElementById('noReviews');
+      if (noRev) noRev.remove();
+      document.getElementById('reviewList').insertAdjacentHTML('afterbegin', card);
+      document.querySelector('.review-form').innerHTML = '<p class="empty-msg">✅ Дякуємо за відгук!</p>';
+    } else {
+      showMsg(msg, d.message || 'Помилка', true);
+    }
+  }).catch(() => showMsg(msg, 'Мережева помилка', true));
+}
+
+function delReview(id) {
+  if (!confirm('Видалити відгук?')) return;
+  fetch(`${APP_URL_JS}/api/reviews/${id}/delete`, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json','X-Requested-With':'XMLHttpRequest'},
+    body: JSON.stringify({_csrf: CSRF_TOKEN}),
+  }).then(r=>r.json()).then(d=>{
+    if (d.success) {
+      const el = document.getElementById('rc-'+id);
+      if (el) el.remove();
+    }
+  });
+}
+
+function showMsg(el, txt, isErr) {
+  el.textContent = txt;
+  el.className = isErr ? 'ajax-err' : 'ajax-ok';
+}
+</script>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">🎬 CineMax</div>
+        <div class="footer-links">
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies">Афіша</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/schedule">Розклад</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/shop">Магазин</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/news">Новини</a>
+        </div>
+        <div class="footer-copy">© 2026 CineMax. Всі права захищено.</div>
+    </div>
+</footer>
+<script>
+    const CSRF_TOKEN = '80a82ba030079782fb758cd48419725a5376faeea0a67a1a69c8832c355d8a6c';
+    const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
+</script>
+<script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>
+</body>
+</html>

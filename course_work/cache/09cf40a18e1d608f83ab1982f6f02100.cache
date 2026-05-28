@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Магазин — CineMax</title>
+    <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
+    <meta name="csrf" content="80a82ba030079782fb758cd48419725a5376faeea0a67a1a69c8832c355d8a6c">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-inner">
+        <a href="http://localhost:8888/course_work_CINEMA/course_work/public/" class="brand">🎬 CineMax</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/"         >Головна</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies"   >Афіша</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/schedule" >Розклад</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/news"     >Новини</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/shop"     class="active">🍿 Магазин</a></li>
+                            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/login">Вхід</a></li>
+                <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/register" class="nav-register">Реєстрація</a></li>
+                    </ul>
+        <button class="burger" id="burger" aria-label="Меню">☰</button>
+    </div>
+</nav>
+
+
+<main class="main">
+    <div class="container">
+        <div class="page-header">
+  <h1>🍿 Магазин попкорну та напоїв</h1>
+  <p class="page-sub">Замовляй улюблені снеки прямо до свого місця у залі!</p>
+</div>
+
+
+<section class="section">
+  <h2 class="section-title">🍿 Попкорн</h2>
+  <div class="shop-grid">
+        <div class="shop-card" data-id="1" data-price="55.00" data-name="Попкорн малий">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/little-pop-corn.png" alt="Попкорн малий" class="shop-img">
+            <div class="shop-info">
+        <h3>Попкорн малий</h3>
+        <p class="shop-desc">Класичний солоний попкорн 200г</p>
+        <div class="shop-price"><strong>55 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+        <div class="shop-card" data-id="2" data-price="85.00" data-name="Попкорн середній">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/medium-pop-corn.png" alt="Попкорн середній" class="shop-img">
+            <div class="shop-info">
+        <h3>Попкорн середній</h3>
+        <p class="shop-desc">Класичний або карамельний попкорн 350г</p>
+        <div class="shop-price"><strong>85 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+        <div class="shop-card" data-id="3" data-price="115.00" data-name="Попкорн великий">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/large-pop-corn.png" alt="Попкорн великий" class="shop-img">
+            <div class="shop-info">
+        <h3>Попкорн великий</h3>
+        <p class="shop-desc">Великий відерко попкорну 500г</p>
+        <div class="shop-price"><strong>115 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+        <div class="shop-card" data-id="4" data-price="165.00" data-name="Попкорн VIP">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/pop corn.png" alt="Попкорн VIP" class="shop-img">
+            <div class="shop-info">
+        <h3>Попкорн VIP</h3>
+        <p class="shop-desc">Трюфельний попкорн у брендованому відрі</p>
+        <div class="shop-price"><strong>165 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+      </div>
+</section>
+<section class="section">
+  <h2 class="section-title">🥤 Напої</h2>
+  <div class="shop-grid">
+        <div class="shop-card" data-id="8" data-price="40.00" data-name="Вода мінеральна">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/water.png" alt="Вода мінеральна" class="shop-img">
+            <div class="shop-info">
+        <h3>Вода мінеральна</h3>
+        <p class="shop-desc">Мінеральна вода 0.5л</p>
+        <div class="shop-price"><strong>40 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+        <div class="shop-card" data-id="5" data-price="65.00" data-name="Кола 0.5л">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/Cola.png" alt="Кола 0.5л" class="shop-img">
+            <div class="shop-info">
+        <h3>Кола 0.5л</h3>
+        <p class="shop-desc">Coca-Cola з льодом</p>
+        <div class="shop-price"><strong>65 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+        <div class="shop-card" data-id="7" data-price="75.00" data-name="Сік апельсиновий">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/Orange_juice.png" alt="Сік апельсиновий" class="shop-img">
+            <div class="shop-info">
+        <h3>Сік апельсиновий</h3>
+        <p class="shop-desc">Свіжовичавлений апельсиновий сік</p>
+        <div class="shop-price"><strong>75 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+        <div class="shop-card" data-id="6" data-price="95.00" data-name="Кола 1л">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/bigger_cola.png" alt="Кола 1л" class="shop-img">
+            <div class="shop-info">
+        <h3>Кола 1л</h3>
+        <p class="shop-desc">Велика Coca-Cola</p>
+        <div class="shop-price"><strong>95 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+        <div class="shop-card" data-id="13" data-price="120.00" data-name="Sprite">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/shop_6a16e6dfa9fbd4.30939916.webp" alt="Sprite" class="shop-img">
+            <div class="shop-info">
+        <h3>Sprite</h3>
+        <p class="shop-desc">Освіжаючий напій</p>
+        <div class="shop-price"><strong>120 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+      </div>
+</section>
+<section class="section">
+  <h2 class="section-title">🍫 Снеки</h2>
+  <div class="shop-grid">
+        <div class="shop-card" data-id="9" data-price="90.00" data-name="Начос з соусом">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/Nachos.png" alt="Начос з соусом" class="shop-img">
+            <div class="shop-info">
+        <h3>Начос з соусом</h3>
+        <p class="shop-desc">Хрусткі начос із сальсою та сиром</p>
+        <div class="shop-price"><strong>90 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+        <div class="shop-card" data-id="10" data-price="95.00" data-name="Хот-дог">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/Hot-dog.png" alt="Хот-дог" class="shop-img">
+            <div class="shop-info">
+        <h3>Хот-дог</h3>
+        <p class="shop-desc">Класичний хот-дог з гірчицею</p>
+        <div class="shop-price"><strong>95 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+      </div>
+</section>
+<section class="section">
+  <h2 class="section-title">🎁 Комбо-набори</h2>
+  <div class="shop-grid">
+        <div class="shop-card" data-id="11" data-price="135.00" data-name="Комбо Стандарт">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/Combo_1.png" alt="Комбо Стандарт" class="shop-img">
+            <div class="shop-info">
+        <h3>Комбо Стандарт</h3>
+        <p class="shop-desc">Попкорн середній + Кола 0.5л</p>
+        <div class="shop-price"><strong>135 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+        <div class="shop-card" data-id="12" data-price="280.00" data-name="Комбо VIP">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/Combo_2.png" alt="Комбо VIP" class="shop-img">
+            <div class="shop-info">
+        <h3>Комбо VIP</h3>
+        <p class="shop-desc">Попкорн VIP + Кола 1л + Начос</p>
+        <div class="shop-price"><strong>280 грн</strong></div>
+                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
+              </div>
+    </div>
+      </div>
+</section>
+
+<div id="shopNotif" class="shop-notif" style="display:none"></div>
+
+<script>
+function addToCart(itemId, btn) {
+  const orig = btn.textContent;
+  btn.disabled = true; btn.textContent = '⏳...';
+
+  fetch('http://localhost:8888/course_work_CINEMA/course_work/public/api/cart/add', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json','X-Requested-With':'XMLHttpRequest'},
+    body: JSON.stringify({item_id: itemId, qty: 1, _csrf: CSRF_TOKEN}),
+  }).then(r => r.json()).then(d => {
+    if (d.success) {
+      btn.textContent = '✅ Додано!';
+      btn.style.background = '#22c55e';
+      // Оновлюємо лічильник кошика у навбарі
+      const badge = document.getElementById('cartBadge');
+      if (badge) badge.textContent = d.cart_count;
+
+      showNotif('✅ ' + d.message);
+      setTimeout(() => { btn.disabled = false; btn.textContent = orig; btn.style.background = ''; }, 2000);
+    } else {
+      btn.disabled = false; btn.textContent = orig;
+      showNotif('❌ ' + (d.message || 'Помилка'), true);
+    }
+  }).catch(() => { btn.disabled = false; btn.textContent = orig; });
+}
+
+function showNotif(msg, isError = false) {
+  const el = document.getElementById('shopNotif');
+  el.textContent = msg;
+  el.className = 'shop-notif ' + (isError ? 'shop-notif-err' : 'shop-notif-ok');
+  el.style.display = 'block';
+  clearTimeout(window._notifTimer);
+  window._notifTimer = setTimeout(() => el.style.display = 'none', 3000);
+}
+</script>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">🎬 CineMax</div>
+        <div class="footer-links">
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies">Афіша</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/schedule">Розклад</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/shop">Магазин</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/news">Новини</a>
+        </div>
+        <div class="footer-copy">© 2026 CineMax. Всі права захищено.</div>
+    </div>
+</footer>
+<script>
+    const CSRF_TOKEN = '80a82ba030079782fb758cd48419725a5376faeea0a67a1a69c8832c355d8a6c';
+    const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
+</script>
+<script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>
+</body>
+</html>

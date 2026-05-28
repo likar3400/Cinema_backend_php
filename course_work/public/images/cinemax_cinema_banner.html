@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  #banner {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* SKY */
+  .sky {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #0a0012 0%, #1a0030 40%, #3d0060 70%, #7b0a2a 90%, #c0471a 100%);
+  }
+
+  /* STARS */
+  .stars {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 200px;
+  }
+  .star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle var(--d) ease-in-out infinite alternate;
+  }
+  @keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+  }
+
+  /* CITY SILHOUETTE */
+  .city {
+    position: absolute;
+    bottom: 80px;
+    left: 0; right: 0;
+    height: 160px;
+  }
+
+  /* CINEMA BUILDING */
+  .cinema {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 160px;
+  }
+
+  .cinema-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 130px;
+    background: #1a0030;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .cinema-roof {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 40px;
+    background: #2d0050;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .marquee {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 50px;
+    background: #ff0066;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 20px #ff006688, 0 0 40px #ff006644;
+  }
+
+  .marquee-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: #fff;
+    letter-spacing: 4px;
+    animation: marqueeGlow 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes marqueeGlow {
+    from { text-shadow: 0 0 8px #fff, 0 0 16px #ffaacc; }
+    to { text-shadow: 0 0 2px #fff; }
+  }
+
+  /* MARQUEE LIGHTS */
+  .marquee-lights {
+    position: absolute;
+    top: 8px; left: 50%;
+    transform: translateX(-50%);
+    width: 248px;
+    height: 54px;
+    pointer-events: none;
+  }
+  .light-dot {
+    position: absolute;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #ffdd00;
+    animation: blinkDot var(--delay) linear infinite;
+  }
+  @keyframes blinkDot {
+    0%, 49% { opacity: 1; box-shadow: 0 0 4px #ffdd00; }
+    50%, 100% { opacity: 0.15; }
+  }
+
+  /* TICKET BOOTH */
+  .booth {
+    position: absolute;
+    bottom: 0;
+    background: #2a004a;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  .booth-left { left: 20px; width: 50px; height: 70px; }
+  .booth-right { right: 20px; width: 50px; height: 70px; }
+  .booth-window {
+    position: absolute;
+    top: 12px; left: 50%;
+    transform: translateX(-50%);
+    width: 30px; height: 24px;
+    background: #ffe066;
+    border-radius: 2px;
+    opacity: 0.9;
+    animation: windowFlicker 3s ease-in-out infinite alternate;
+  }
+  @keyframes windowFlicker {
+    from { opacity: 0.9; }
+    to { opacity: 0.6; }
+  }
+
+  /* ENTRANCE */
+  .entrance {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 90px;
+    background: #ffe066;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    animation: entranceGlow 2s ease-in-out infinite alternate;
+  }
+  @keyframes entranceGlow {
+    from { box-shadow: 0 0 20px #ffe06688, 0 0 40px #ffe06633; }
+    to { box-shadow: 0 0 8px #ffe06644; }
+  }
+
+  /* GROUND */
+  .ground {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
+  }
+
+  .sidewalk {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 24px;
+    background: #2a2a2a;
+  }
+
+  /* RED CARPET */
+  .carpet {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 56px;
+    background: linear-gradient(180deg, #cc0033 0%, #990022 100%);
+  }
+
+  /* STREET LIGHTS */
+  .street-light {
+    position: absolute;
+    bottom: 24px;
+  }
+  .sl-pole { width: 4px; background: #444; }
+  .sl-head {
+    width: 14px; height: 6px;
+    background: #ffee99;
+    border-radius: 3px;
+    position: relative;
+    left: -5px;
+    animation: lampGlow 2.5s ease-in-out infinite alternate;
+  }
+  @keyframes lampGlow {
+    from { box-shadow: 0 0 8px #ffee99, 0 0 20px #ffee9966; }
+    to { box-shadow: 0 0 3px #ffee9988; }
+  }
+
+  /* PEOPLE */
+  .crowd {
+    position: absolute;
+    bottom: 24px;
+    left: 0; right: 0;
+    height: 60px;
+  }
+
+  .person {
+    position: absolute;
+    bottom: 0;
+    animation: walkRight var(--spd) linear infinite;
+  }
+  .person.walk-left {
+    animation: walkLeft var(--spd) linear infinite;
+  }
+
+  @keyframes walkRight {
+    from { left: var(--start); }
+    to { left: 110%; }
+  }
+  @keyframes walkLeft {
+    from { right: var(--start); }
+    to { right: 110%; }
+  }
+
+  .person-body {
+    width: var(--w);
+    position: relative;
+    animation: bobWalk 0.5s ease-in-out infinite alternate;
+  }
+  @keyframes bobWalk {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-2px); }
+  }
+
+  /* POPCORN */
+  .popcorn-box {
+    position: absolute;
+    width: 6px; height: 8px;
+    border-radius: 0 0 2px 2px;
+    top: -24px;
+    right: -4px;
+  }
+
+  /* NEON SIGN */
+  .neon-sign {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: #ff66cc;
+    white-space: nowrap;
+    text-shadow: 0 0 6px #ff66cc, 0 0 12px #ff00aa;
+    animation: neonFlicker 4s step-start infinite;
+  }
+  @keyframes neonFlicker {
+    0%, 18%, 20%, 100% { opacity: 1; }
+    19% { opacity: 0.3; }
+    85%, 86% { opacity: 0.5; }
+  }
+
+  /* TAGLINE */
+  .tagline {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.5);
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  /* CITY BUILDINGS BG */
+  .bg-buildings {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    pointer-events: none;
+  }
+  .bldg {
+    position: absolute;
+    bottom: 0;
+    background: #0d001f;
+  }
+  .bldg-window {
+    position: absolute;
+    background: #ffe066;
+    border-radius: 1px;
+    animation: winBlink var(--d) ease-in-out infinite alternate;
+    opacity: var(--op);
+  }
+  @keyframes winBlink {
+    from { opacity: var(--op); }
+    to { opacity: calc(var(--op) * 0.3); }
+  }
+
+  /* FILM STRIP TOP */
+  .filmstrip {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 14px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    gap: 6px;
+  }
+  .film-hole {
+    width: 8px; height: 6px;
+    border-radius: 1px;
+    background: #333;
+    flex-shrink: 0;
+  }
+  .filmstrip-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 8px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    gap: 6px;
+  }
+</style>
+</head>
+<body>
+<div id="banner">
+
+  <!-- FILMSTRIP TOP -->
+  <div class="filmstrip" id="fs-top"></div>
+
+  <!-- SKY -->
+  <div class="sky"></div>
+
+  <!-- STARS -->
+  <div class="stars" id="stars"></div>
+
+  <!-- BG BUILDINGS -->
+  <div class="bg-buildings" id="bg-buildings"></div>
+
+  <!-- GROUND -->
+  <div class="ground">
+    <div class="carpet"></div>
+    <div class="sidewalk"></div>
+  </div>
+
+  <!-- CINEMA -->
+  <div class="cinema">
+    <div class="cinema-roof">
+      <div class="neon-sign">NOW SHOWING</div>
+    </div>
+    <div class="cinema-body">
+      <div class="marquee">
+        <div class="marquee-text">CINEMAX</div>
+      </div>
+      <div class="marquee-lights" id="marquee-lights"></div>
+      <div class="tagline">experience the magic</div>
+    </div>
+    <div class="booth booth-left"><div class="booth-window"></div></div>
+    <div class="booth booth-right"><div class="booth-window"></div></div>
+    <div class="entrance"></div>
+  </div>
+
+  <!-- STREET LIGHTS -->
+  <div id="lights-container"></div>
+
+  <!-- CROWD -->
+  <div class="crowd" id="crowd"></div>
+
+  <!-- FILMSTRIP BOTTOM -->
+  <div class="filmstrip-bottom" id="fs-bottom"></div>
+</div>
+
+<script>
+  // FILMSTRIP HOLES
+  function makeFilmStrip(id) {
+    const fs = document.getElementById(id);
+    for (let i = 0; i < 60; i++) {
+      const h = document.createElement('div');
+      h.className = 'film-hole';
+      fs.appendChild(h);
+    }
+  }
+  makeFilmStrip('fs-top');
+  makeFilmStrip('fs-bottom');
+
+  // STARS
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 60; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 2 + 0.5;
+    s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${1.5+Math.random()*3}s;animation-delay:${Math.random()*3}s`;
+    starsEl.appendChild(s);
+  }
+
+  // BG BUILDINGS
+  const bgB = document.getElementById('bg-buildings');
+  const bldgData = [
+    {l:0,w:60,h:90},{l:55,w:45,h:70},{l:90,w:30,h:110},
+    {l:130,w:50,h:80},{l:170,w:35,h:60},{l:200,w:55,h:95},
+    {l:240,w:40,h:50},{l:270,w:30,h:75},
+    {l:390,w:30,h:75},{l:415,w:40,h:50},
+    {l:450,w:55,h:95},{l:500,w:35,h:60},
+    {l:530,w:50,h:80},{l:580,w:30,h:110},
+    {l:610,w:45,h:70},{l:650,w:60,h:90},
+  ];
+  bldgData.forEach(b => {
+    const el = document.createElement('div');
+    el.className = 'bldg';
+    el.style.cssText = `left:${b.l}px;width:${b.w}px;height:${b.h}px`;
+    // windows
+    for (let wr = 0; wr < 4; wr++) {
+      for (let wc = 0; wc < 3; wc++) {
+        const wx = 6 + wc * (b.w/3.2);
+        const wy = 8 + wr * 18;
+        if (wy + 10 < b.h && wx + 8 < b.w) {
+          const w = document.createElement('div');
+          w.className = 'bldg-window';
+          const op = Math.random() > 0.4 ? (0.4 + Math.random()*0.5) : 0.1;
+          w.style.cssText = `left:${wx}px;top:${wy}px;width:${4+Math.random()*4}px;height:${5+Math.random()*3}px;--d:${2+Math.random()*4}s;--op:${op};animation-delay:${Math.random()*4}s`;
+          el.appendChild(w);
+        }
+      }
+    }
+    bgB.appendChild(el);
+  });
+
+  // MARQUEE LIGHTS
+  const ml = document.getElementById('marquee-lights');
+  const dotCount = 26;
+  for (let i = 0; i < dotCount; i++) {
+    const d = document.createElement('div');
+    d.className = 'light-dot';
+    const angle = (i / dotCount) * Math.PI * 2;
+    const rx = 115, ry = 23;
+    const x = 124 + rx * Math.cos(angle);
+    const y = 27 + ry * Math.sin(angle);
+    d.style.cssText = `left:${x-2.5}px;top:${y-2.5}px;--delay:${(i*0.1)%0.8}s`;
+    ml.appendChild(d);
+  }
+
+  // STREET LIGHTS
+  const lc = document.getElementById('lights-container');
+  [{x:160,h:55},{x:530,h:55}].forEach(sl => {
+    const el = document.createElement('div');
+    el.className = 'street-light';
+    el.style.cssText = `left:${sl.x}px;bottom:24px`;
+    el.innerHTML = `<div class="sl-pole" style="height:${sl.h}px;margin-left:5px"></div><div class="sl-head"></div>`;
+    lc.appendChild(el);
+  });
+
+  // PEOPLE
+  const crowd = document.getElementById('crowd');
+
+  function makePerson(cfg) {
+    const p = document.createElement('div');
+    p.className = 'person' + (cfg.dir === 'left' ? ' walk-left' : '');
+    const spd = cfg.spd || (8 + Math.random() * 6);
+    p.style.cssText = `--spd:${spd}s;--start:${cfg.start};bottom:${cfg.bottom || 0}px;animation-delay:${cfg.delay || 0}s`;
+
+    // SVG person
+    const h = cfg.h || 38;
+    const skinTone = cfg.skin || '#f4c49e';
+    const shirtCol = cfg.shirt || '#cc2244';
+    const pantsCol = cfg.pants || '#222';
+    const hairCol = cfg.hair || '#3a2010';
+
+    const svg = `<svg width="${Math.round(h*0.55)}" height="${h}" viewBox="0 0 22 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- shadow -->
+      <ellipse cx="11" cy="39" rx="7" ry="2" fill="rgba(0,0,0,0.3)"/>
+      <!-- legs -->
+      <rect x="7" y="26" width="4" height="11" rx="2" fill="${pantsCol}" class="leg-l"/>
+      <rect x="11" y="26" width="4" height="11" rx="2" fill="${pantsCol}" class="leg-r"/>
+      <!-- shoes -->
+      <rect x="6" y="35" width="6" height="4" rx="2" fill="#111"/>
+      <rect x="10" y="35" width="6" height="4" rx="2" fill="#111"/>
+      <!-- body -->
+      <rect x="5" y="16" width="12" height="12" rx="3" fill="${shirtCol}"/>
+      <!-- arms -->
+      <rect x="2" y="16" width="4" height="9" rx="2" fill="${shirtCol}"/>
+      <rect x="16" y="16" width="4" height="9" rx="2" fill="${shirtCol}"/>
+      <!-- hands -->
+      <circle cx="4" cy="25" r="2" fill="${skinTone}"/>
+      <circle cx="18" cy="25" r="2" fill="${skinTone}"/>
+      <!-- neck -->
+      <rect x="9" y="12" width="4" height="5" rx="1" fill="${skinTone}"/>
+      <!-- head -->
+      <ellipse cx="11" cy="10" rx="6" ry="6.5" fill="${skinTone}"/>
+      <!-- hair -->
+      ${cfg.hair !== false ? `<ellipse cx="11" cy="5" rx="6" ry="4" fill="${hairCol}"/>` : ''}
+      <!-- face -->
+      <circle cx="9" cy="10" r="0.8" fill="#333"/>
+      <circle cx="13" cy="10" r="0.8" fill="#333"/>
+      <path d="M9 13 Q11 15 13 13" stroke="#333" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+      ${cfg.popcorn ? `<rect x="16" y="20" width="7" height="8" rx="1" fill="#cc3300"/>
+      <path d="M16 20 Q17 16 20 15 Q23 16 23 20" fill="#ffeecc"/>` : ''}
+      ${cfg.couple ? `<!-- partner -->` : ''}
+    </svg>`;
+
+    p.innerHTML = svg;
+    return p;
+  }
+
+  const people = [
+    {start:'-10%', spd:10, delay:0, h:40, skin:'#f4c49e', shirt:'#cc2244', pants:'#222', hair:'#3a2010'},
+    {start:'-20%', spd:12, delay:2, h:36, skin:'#c68642', shirt:'#2244cc', pants:'#333', hair:'#111'},
+    {start:'-5%',  spd:9,  delay:4, h:38, skin:'#f4c49e', shirt:'#228844', pants:'#222', hair:'#8b4513', popcorn:true},
+    {start:'-35%', spd:11, delay:1, h:35, skin:'#8d5524', shirt:'#aa3388', pants:'#111', hair:'#1a0a00'},
+    {start:'-50%', spd:13, delay:0.5, h:37, skin:'#ffe0bd', shirt:'#cc8800', pants:'#333', hair:'#2a1500'},
+    {start:'-70%', spd:10, delay:3, h:39, skin:'#c68642', shirt:'#cc2244', pants:'#444', hair:'#000', popcorn:true},
+    {start:'-15%', spd:14, delay:6, h:34, skin:'#f4c49e', shirt:'#334499', pants:'#222', hair:'#5c3317'},
+    {start:'-80%', spd:11, delay:1.5, h:36, skin:'#8d5524', shirt:'#44aa44', pants:'#222', hair:'#222'},
+    {dir:'left', start:'-5%', spd:11, delay:0, h:36, skin:'#ffe0bd', shirt:'#882222', pants:'#333', hair:'#3a2010'},
+    {dir:'left', start:'-25%', spd:13, delay:3, h:38, skin:'#c68642', shirt:'#224488', pants:'#222', hair:'#111'},
+    {dir:'left', start:'-50%', spd:10, delay:5, h:37, skin:'#f4c49e', shirt:'#cc6600', pants:'#444', hair:'#5c3317', popcorn:true},
+  ];
+
+  people.forEach(cfg => {
+    crowd.appendChild(makePerson(cfg));
+  });
+</script>
+</body>
+</html>

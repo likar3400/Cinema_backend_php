@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Афіша — CineMax</title>
+    <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
+    <meta name="csrf" content="7a9326d7bedf932b003efb76cf660eb5b4760cdd9188b3952a08c4d307c0d412">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-inner">
+        <a href="http://localhost:8888/course_work_CINEMA/course_work/public/" class="brand">🎬 CineMax</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/"         >Головна</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies"   class="active">Афіша</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/schedule" >Розклад</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/news"     >Новини</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/shop"     >🍿 Магазин</a></li>
+                            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/login">Вхід</a></li>
+                <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/register" class="nav-register">Реєстрація</a></li>
+                    </ul>
+        <button class="burger" id="burger" aria-label="Меню">☰</button>
+    </div>
+</nav>
+
+
+<main class="main">
+    <div class="container">
+        <div class="page-header"><h1>🎬 Афіша</h1></div>
+<div class="movies-grid">
+    <div class="movie-card">
+    <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/7">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e64b90f8b7.05239017.jpg" alt="Мандалорець" class="movie-poster">
+          </a>
+    <div class="movie-body">
+      <span class="age-badge">12+</span>
+      <h3><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/7">Мандалорець</a></h3>
+      <p class="movie-genre">Фантастика/Пригоди</p>
+      <div class="movie-meta">
+        <span>⏱ 135 хв</span>
+        <span>⭐ 8.7</span>        <span>📅 2026</span>      </div>
+      <p class="movie-desc">Усамітнений воїн-мандалорець подорожує галактикою разом із маленьким Ґроґу — загадковим істотою з мо…</p>
+      <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/7" class="btn btn-outline btn-sm">Детальніше</a>
+    </div>
+  </div>
+    <div class="movie-card">
+    <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/5">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e5689af5e7.14014562.jpeg" alt="Гладіатор 2" class="movie-poster">
+          </a>
+    <div class="movie-body">
+      <span class="age-badge">16+</span>
+      <h3><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/5">Гладіатор 2</a></h3>
+      <p class="movie-genre">Бойовик/Пригоди</p>
+      <div class="movie-meta">
+        <span>⏱ 148 хв</span>
+        <span>⭐ 5.0</span>        <span>📅 2026</span>      </div>
+      <p class="movie-desc">Рідлі Скотт повертається до Риму. Новий герой виходить на арену Колізею заради помсти і свободи.…</p>
+      <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/5" class="btn btn-outline btn-sm">Детальніше</a>
+    </div>
+  </div>
+    <div class="movie-card">
+    <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/6">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e62e4a53a9.30317160.jpeg" alt="Майкл" class="movie-poster">
+          </a>
+    <div class="movie-body">
+      <span class="age-badge">12+</span>
+      <h3><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/6">Майкл</a></h3>
+      <p class="movie-genre">Біографія/Музика</p>
+      <div class="movie-meta">
+        <span>⏱ 148 хв</span>
+        <span>⭐ 7.8</span>        <span>📅 2026</span>      </div>
+      <p class="movie-desc">Байопік про життя та творчість Майкла Джексона — короля поп-музики. Фільм охоплює злети та падіння о…</p>
+      <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/6" class="btn btn-outline btn-sm">Детальніше</a>
+    </div>
+  </div>
+    <div class="movie-card">
+    <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/2">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e5bdcc9f85.30753574.jpeg" alt="Оппенгеймер" class="movie-poster">
+          </a>
+    <div class="movie-body">
+      <span class="age-badge">16+</span>
+      <h3><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/2">Оппенгеймер</a></h3>
+      <p class="movie-genre">Драма/Біографія</p>
+      <div class="movie-meta">
+        <span>⏱ 180 хв</span>
+        <span>⭐ 8.9</span>        <span>📅 2026</span>      </div>
+      <p class="movie-desc">Історія батька атомної бомби — Роберта Оппенгеймера. Трилогія Нолана про найнебезпечніший винахід лю…</p>
+      <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/2" class="btn btn-outline btn-sm">Детальніше</a>
+    </div>
+  </div>
+    <div class="movie-card">
+    <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/8">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16ec927fb9a1.58523690.jpg" alt="Kermit and friend" class="movie-poster">
+          </a>
+    <div class="movie-body">
+      <span class="age-badge">0+</span>
+      <h3><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/8">Kermit and friend</a></h3>
+      <p class="movie-genre">Мультфільм</p>
+      <div class="movie-meta">
+        <span>⏱ 90 хв</span>
+        <span>⭐ 6.0</span>        <span>📅 2026</span>      </div>
+      <p class="movie-desc">Старий фомат театру ляльок повертається.Створено для любителів ретро та сімей!…</p>
+      <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/8" class="btn btn-outline btn-sm">Детальніше</a>
+    </div>
+  </div>
+    <div class="movie-card">
+    <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/1">
+              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e66411b524.20582882.jpg" alt="Дюна: Частина Друга" class="movie-poster">
+          </a>
+    <div class="movie-body">
+      <span class="age-badge">12+</span>
+      <h3><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/1">Дюна: Частина Друга</a></h3>
+      <p class="movie-genre">Наукова фантастика</p>
+      <div class="movie-meta">
+        <span>⏱ 166 хв</span>
+        <span>⭐ 8.8</span>        <span>📅 2026</span>      </div>
+      <p class="movie-desc">Пол Атрейдес веде армію фрименів у священній війні проти змовників на пустельній планеті Арракіс.…</p>
+      <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/1" class="btn btn-outline btn-sm">Детальніше</a>
+    </div>
+  </div>
+    </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">🎬 CineMax</div>
+        <div class="footer-links">
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies">Афіша</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/schedule">Розклад</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/shop">Магазин</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/news">Новини</a>
+        </div>
+        <div class="footer-copy">© 2026 CineMax. Всі права захищено.</div>
+    </div>
+</footer>
+<script>
+    const CSRF_TOKEN = '7a9326d7bedf932b003efb76cf660eb5b4760cdd9188b3952a08c4d307c0d412';
+    const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
+</script>
+<script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>
+</body>
+</html>
