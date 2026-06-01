@@ -1,11 +1,8 @@
--- CineMax schema v5 — літо 2026, відгуки, категорії, виправлені паролі
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 CREATE DATABASE IF NOT EXISTS cinema_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE cinema_db;
-
--- ── Users ─────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS users (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(120) NOT NULL,
@@ -18,12 +15,9 @@ CREATE TABLE IF NOT EXISTS users (
     INDEX idx_email(email), INDEX idx_role(role)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Паролі: admin123! та user123! (bcrypt $2b$/cost=12)
 INSERT IGNORE INTO users (name, email, password, role) VALUES
 ('Адміністратор','admin@cinema.ua','$2b$12$HPAoJjt5yAQV8x4MoMKMrO.8DYGdi2O8CgyoKhaJwQc9RCfb0m6iu','admin'),
-('Тест Юзер','user@cinema.ua','$2b$12$2.yQalWxIGoB78mMUJYa8.y08n9hkeTviOp9LOytxuQNG0z/3LQjO','user');
 
--- ── Movie categories ───────────────────────────────────────
 CREATE TABLE IF NOT EXISTS movie_categories (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE
@@ -32,7 +26,6 @@ CREATE TABLE IF NOT EXISTS movie_categories (
 INSERT IGNORE INTO movie_categories (name) VALUES
 ('Екшн'),('Драма'),('Фантастика'),('Комедія'),('Трилер'),('Анімація'),('Документальний');
 
--- ── Movies ────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS movies (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -60,7 +53,6 @@ INSERT INTO movies (title,description,genre,duration,rating,age_rating,release_d
 ('Зоряні Війни: Сходження Скайвокера','Фінал саги Скайвокерів. Дейзі Рідлі, Адам Драйвер — остання битва між Сторонами Сили.','Фантастика/Пригоди',142,7.1,'6+','2026-07-04','/images/posters/civil_war.jpg'),
 ('Гладіатор 2','Рідлі Скотт повертається до Риму. Новий герой на арені Колізею. Пол Мескал, Деніел Крейг.','Бойовик/Пригоди',148,7.4,'16+','2026-07-12','/images/posters/gladiator2.jpg');
 
--- ── Halls ─────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS halls (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -75,7 +67,6 @@ INSERT INTO halls (name,row_count,col_count,type) VALUES
 ('Зала 2 — VIP',6,10,'vip'),
 ('Зала 3 — Стандарт',10,14,'standard');
 
--- ── Seats (авто-генерація) ─────────────────────────────────
 CREATE TABLE IF NOT EXISTS seats (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     hall_id INT UNSIGNED NOT NULL,
@@ -99,7 +90,6 @@ JOIN (SELECT 1 n UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5
       UNION SELECT 11 UNION SELECT 12 UNION SELECT 13 UNION SELECT 14) c ON c.n<=h.col_count
 ORDER BY h.id,r.n,c.n;
 
--- ── Sessions — літні 2026 ─────────────────────────────────
 CREATE TABLE IF NOT EXISTS sessions (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     movie_id INT UNSIGNED NOT NULL,
@@ -117,31 +107,31 @@ CREATE TABLE IF NOT EXISTS sessions (
     CONSTRAINT fk_sess_hall  FOREIGN KEY (hall_id)  REFERENCES halls(id)  ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Сеанси: всі 5 фільмів, червень-серпень 2026
+
 INSERT INTO sessions (movie_id,hall_id,starts_at,ends_at,price,price_vip,language,format) VALUES
--- Дюна 2
+
 (1,1,'2026-06-06 10:00:00','2026-06-06 12:46:00',320.00,0,'uk','IMAX'),
 (1,3,'2026-06-07 15:00:00','2026-06-07 17:46:00',180.00,0,'uk','2D'),
 (1,2,'2026-06-14 11:00:00','2026-06-14 13:46:00',280.00,500.00,'uk','2D'),
 (1,1,'2026-07-01 21:00:00','2026-07-01 23:46:00',340.00,0,'uk','IMAX'),
--- Оппенгеймер
+
 (2,2,'2026-06-11 12:00:00','2026-06-11 15:00:00',250.00,450.00,'dub','2D'),
 (2,1,'2026-06-20 19:00:00','2026-06-20 22:00:00',350.00,0,'dub','IMAX'),
 (2,3,'2026-07-05 14:00:00','2026-07-05 17:00:00',200.00,0,'uk','2D'),
--- Майкл: Байопік (раніше Майстер і Маргарита)
+
 (3,3,'2026-06-21 18:00:00','2026-06-21 20:28:00',200.00,0,'uk','2D'),
 (3,2,'2026-07-06 20:00:00','2026-07-06 22:28:00',260.00,480.00,'dub','2D'),
 (3,1,'2026-07-20 17:00:00','2026-07-20 19:28:00',300.00,0,'dub','IMAX'),
--- Зоряні Війни: Сходження Скайвокера
+
 (4,1,'2026-07-05 10:00:00','2026-07-05 12:22:00',280.00,0,'uk','IMAX'),
 (4,3,'2026-07-12 16:00:00','2026-07-12 18:22:00',190.00,0,'uk','2D'),
 (4,2,'2026-08-01 14:00:00','2026-08-01 16:22:00',220.00,400.00,'dub','2D'),
--- Гладіатор 2
+
 (5,2,'2026-07-13 14:00:00','2026-07-13 16:28:00',300.00,550.00,'dub','2D'),
 (5,3,'2026-07-19 16:00:00','2026-07-19 18:28:00',200.00,0,'uk','2D'),
 (5,1,'2026-08-10 19:00:00','2026-08-10 21:28:00',360.00,0,'dub','IMAX');
 
--- ── Bookings ──────────────────────────────────────────────
+
 CREATE TABLE IF NOT EXISTS bookings (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     user_id INT UNSIGNED NOT NULL,
@@ -158,7 +148,7 @@ CREATE TABLE IF NOT EXISTS bookings (
     CONSTRAINT fk_book_seat    FOREIGN KEY (seat_id)    REFERENCES seats(id)    ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ── News ──────────────────────────────────────────────────
+-
 CREATE TABLE IF NOT EXISTS news (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -176,7 +166,7 @@ INSERT INTO news (title,body) VALUES
 ('Літній кінофестиваль 2026','Цього літа CineMax проводить спеціальний кінофестиваль! Кращі фільми сезону щодня.'),
 ('Гладіатор 2 у IMAX!','Рідлі Скотт повертається! Дивіться найгучніший блокбастер сезону у форматі IMAX.');
 
--- ── Shop items ────────────────────────────────────────────
+
 CREATE TABLE IF NOT EXISTS shop_items (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(120) NOT NULL,
@@ -199,7 +189,7 @@ INSERT INTO shop_items (name,description,price,category,image) VALUES
 ('Комбо Стандарт','Попкорн середній + Кола 0.5л',135.00,'combo','/images/shop/Combo_1.png'),
 ('Комбо VIP','Попкорн великий + Кола 1л + Начос',280.00,'combo','/images/shop/Combo_2.png');
 
--- ── Cart ──────────────────────────────────────────────────
+
 CREATE TABLE IF NOT EXISTS cart (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     user_id INT UNSIGNED NOT NULL,
@@ -233,8 +223,6 @@ CREATE TABLE IF NOT EXISTS shop_order_items (
     CONSTRAINT fk_oi_order FOREIGN KEY (order_id) REFERENCES shop_orders(id) ON DELETE CASCADE,
     CONSTRAINT fk_oi_item  FOREIGN KEY (item_id)  REFERENCES shop_items(id)  ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ── Reviews ───────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS reviews (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     user_id INT UNSIGNED NOT NULL,
@@ -243,7 +231,7 @@ CREATE TABLE IF NOT EXISTS reviews (
     body TEXT NOT NULL,
     is_active TINYINT(1) NOT NULL DEFAULT 1,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE KEY uq_user_movie(user_id,movie_id),  -- один відгук на фільм (409 Conflict)
+    UNIQUE KEY uq_user_movie(user_id,movie_id), 
     INDEX idx_movie(movie_id),
     CONSTRAINT fk_rev_user  FOREIGN KEY (user_id)  REFERENCES users(id)   ON DELETE CASCADE,
     CONSTRAINT fk_rev_movie FOREIGN KEY (movie_id) REFERENCES movies(id)  ON DELETE CASCADE

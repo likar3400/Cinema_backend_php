@@ -1,7 +1,6 @@
 
 USE cinema_db;
 
--- ── movie_categories ──────────────────────────────────────
 CREATE TABLE IF NOT EXISTS movie_categories (
     id   INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE
@@ -9,14 +8,12 @@ CREATE TABLE IF NOT EXISTS movie_categories (
 
 INSERT IGNORE INTO movie_categories (name) VALUES
 ('Екшн'),('Драма'),('Фантастика'),('Комедія'),('Трилер'),('Анімація'),('Документальний');
-
--- Додаємо стовпець category_id до movies якщо ще немає
 ALTER TABLE movies
     ADD COLUMN IF NOT EXISTS category_id INT UNSIGNED DEFAULT NULL AFTER genre,
     ADD CONSTRAINT IF NOT EXISTS fk_movie_cat
         FOREIGN KEY (category_id) REFERENCES movie_categories(id) ON DELETE SET NULL;
 
--- ── cart ─────────────────────────────────────────────────
+
 CREATE TABLE IF NOT EXISTS cart (
     id         INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     user_id    INT UNSIGNED NOT NULL,
@@ -28,7 +25,6 @@ CREATE TABLE IF NOT EXISTS cart (
     CONSTRAINT fk_cart_item FOREIGN KEY (item_id) REFERENCES shop_items(id)  ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ── reviews ───────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS reviews (
     id         INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     user_id    INT UNSIGNED NOT NULL,
@@ -43,13 +39,9 @@ CREATE TABLE IF NOT EXISTS reviews (
     CONSTRAINT fk_rev_movie FOREIGN KEY (movie_id) REFERENCES movies(id)  ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ── Паролі: admin123! та user123! ─────────────────────────
 UPDATE users SET password='$2b$12$HPAoJjt5yAQV8x4MoMKMrO.8DYGdi2O8CgyoKhaJwQc9RCfb0m6iu'
 WHERE email='admin@cinema.ua';
-UPDATE users SET password='$2b$12$2.yQalWxIGoB78mMUJYa8.y08n9hkeTviOp9LOytxuQNG0z/3LQjO'
-WHERE email='user@cinema.ua';
 
--- ── Перейменування фільмів ────────────────────────────────
 UPDATE movies SET title='Майкл: Байопік',
     description='Офіційна біографічна драма про Короля поп-музики Майкла Джексона. Його зліт, слава та приватне життя.',
     genre='Драма/Музика',
@@ -62,16 +54,12 @@ UPDATE movies SET title='Зоряні Війни: Сходження Скайв�
     release_date='2026-07-04'
 WHERE title IN ('Падіння Імперії','Зоряні Війни');
 
--- ── Оновлення дат сеансів на літо 2026 ───────────────────
--- (тільки якщо дати ще старі)
 UPDATE sessions SET
     starts_at = DATE_ADD(starts_at, INTERVAL
         TIMESTAMPDIFF(YEAR, starts_at, '2026-06-15') YEAR),
     ends_at   = DATE_ADD(ends_at, INTERVAL
         TIMESTAMPDIFF(YEAR, ends_at, '2026-06-15') YEAR)
 WHERE YEAR(starts_at) < 2026;
-
--- ── Додаємо зображення до shop_items якщо ще не заповнено ─
 UPDATE shop_items SET image='/images/shop/little-pop-corn.png'  WHERE name LIKE '%малий%'  AND (image IS NULL OR image='');
 UPDATE shop_items SET image='/images/shop/medium-pop-corn.png'  WHERE name LIKE '%середн%' AND (image IS NULL OR image='');
 UPDATE shop_items SET image='/images/shop/large-pop-corn.png'   WHERE name LIKE '%велик%'  AND (image IS NULL OR image='');
