@@ -5,18 +5,29 @@ use App\Core\Model;
 
 class SessionModel extends Model
 {
-    public function getUpcoming(int $movieId=0, string $date=''): array
+    public function getUpcoming(int $movieId = 0, string $date = ''): array
     {
-        $sql = 'SELECT s.*,m.title AS movie_title,m.duration,m.age_rating,m.poster,
-                       h.name AS hall_name,h.type AS hall_type
-                FROM sessions s
-                JOIN movies m ON m.id=s.movie_id
-                JOIN halls  h ON h.id=s.hall_id
-                WHERE s.is_active=1 AND s.starts_at>=NOW()';
+        $where  = ['s.is_active = 1'];
         $params = [];
-        if ($movieId > 0) { $sql .= ' AND s.movie_id=?'; $params[] = $movieId; }
-        if ($date !== '')  { $sql .= ' AND DATE(s.starts_at)=?'; $params[] = $date; }
-        $sql .= ' ORDER BY s.starts_at';
+
+        if ($movieId > 0) { $where[] = 's.movie_id = ?'; $params[] = $movieId; }
+
+        if ($date) {
+            $where[] = 'DATE(s.starts_at) = ?';
+            $params[] = $date;
+        } else {
+            $where[] = 's.starts_at >= NOW()';
+        }
+
+        $sql = "SELECT s.*, m.title AS movie_title, m.poster, m.age_rating,
+                   h.name AS hall_name
+            FROM sessions s
+            JOIN movies m ON m.id = s.movie_id
+            JOIN halls  h ON h.id = s.hall_id
+            WHERE " . implode(' AND ', $where) . "
+            ORDER BY s.starts_at
+            LIMIT 20";
+
         return $this->db->fetchAll($sql, $params);
     }
 

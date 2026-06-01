@@ -70,8 +70,10 @@ class MovieModel extends Model
 
     public function createCategory(string $name): int
     {
+        $slug = mb_strtolower(preg_replace('/\s+/', '-', trim($name)));
         return $this->db->insert(
-            'INSERT INTO movie_categories (name) VALUES (?)', [trim($name)]
+            'INSERT INTO movie_categories (name, slug) VALUES (?, ?)',
+            [trim($name), $slug]
         );
     }
 

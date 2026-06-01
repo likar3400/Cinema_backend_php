@@ -36,19 +36,17 @@ abstract class Controller
         Response::json($data, $code);
     }
 
-    /** 302 redirect (GET) */
+
     protected function redirect(string $url): never
     {
         Response::redirect($url, 302);
     }
 
-    /** 303 See Other — правильний після POST (PRG pattern) */
     protected function redirectAfterPost(string $url): never
     {
         Response::redirect($url, 303);
     }
 
-    /** 301 Permanent redirect */
     protected function redirectPermanent(string $url): never
     {
         Response::redirect($url, 301);
@@ -69,23 +67,19 @@ abstract class Controller
         }
     }
 
-    /** 401 Unauthorized → редірект на /login */
     protected function requireAuth(): void
     {
         if (!Session::isLoggedIn()) {
             Response::status(401);
             Response::noCache();
-            // Якщо AJAX — повертаємо JSON 401
             if ($this->request->isAjax()) {
                 $this->json(['error' => 'Unauthorized', 'redirect' => APP_URL . '/login'], 401);
             }
-            // Зберігаємо куди повернутись після логіну
             Session::set('redirect_after_login', $this->request->uri());
             Response::redirect('/login', 303);
         }
     }
 
-    /** 403 Forbidden */
     protected function requireAdmin(): void
     {
         $this->requireAuth();

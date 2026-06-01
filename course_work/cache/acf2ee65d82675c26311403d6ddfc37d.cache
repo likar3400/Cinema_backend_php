@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Розклад — CineMax</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="7a9326d7bedf932b003efb76cf660eb5b4760cdd9188b3952a08c4d307c0d412">
+    <meta name="csrf" content="b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f">
 </head>
 <body>
 
@@ -81,7 +81,7 @@
 
 <div class="filter-bar card">
   <div class="fg"><label>Дата</label>
-    <input type="date" id="fDate" value="2026-05-27" min="2026-05-27"></div>
+    <input type="date" id="fDate" value="2026-05-28" min="2026-05-28"></div>
   <div class="fg"><label>Фільм</label>
     <select id="fMovie">
       <option value="0">Всі фільми</option>
@@ -162,7 +162,7 @@ document.getElementById('fMovie').addEventListener('change',loadSched);
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = '7a9326d7bedf932b003efb76cf660eb5b4760cdd9188b3952a08c4d307c0d412';
+    const CSRF_TOKEN = 'b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>

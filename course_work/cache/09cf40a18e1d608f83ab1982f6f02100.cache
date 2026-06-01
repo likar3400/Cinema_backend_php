@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Магазин — CineMax</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="80a82ba030079782fb758cd48419725a5376faeea0a67a1a69c8832c355d8a6c">
+    <meta name="csrf" content="b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f">
 </head>
 <body>
 
@@ -225,7 +225,7 @@ function showNotif(msg, isError = false) {
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = '80a82ba030079782fb758cd48419725a5376faeea0a67a1a69c8832c355d8a6c';
+    const CSRF_TOKEN = 'b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>

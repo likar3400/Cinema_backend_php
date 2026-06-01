@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>CineMax — Онлайн-продаж квитків</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="e235bfb86a50b14b6758d18d6b21fc2475c3d5d487bfb69a6460651b044cefcb">
+    <meta name="csrf" content="b83600be50ce4fc1fc0476d5c716dfacb5cc80a87611d36db7d2ecff5a192fd0">
 </head>
 <body>
 
@@ -53,8 +53,45 @@
 <section class="section">
   <h2 class="section-title">🎬 Найближчі сеанси</h2>
   <div class="sessions-grid" id="today-sessions">
-          <p class="empty-msg">Найближчих сеансів немає. <a href="http://localhost:8888/course_work_CINEMA/course_work/public/schedule">Дивіться повний розклад</a></p>
-      </div>
+                <div class="sess-card">
+        <div class="sess-time">01.06 10:00</div>
+        <div class="sess-movie">Дюна: Частина Друга</div>
+        <div class="sess-meta">Зала 1 — IMAX · IMAX</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 320 грн</span>
+                  </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+        <div class="sess-time">01.06 13:25</div>
+        <div class="sess-movie">Kermit and friend</div>
+        <div class="sess-meta">Зала 1 — IMAX · 2D</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 100 грн</span>
+                    <span class="price-vip">VIP: 200 грн</span>
+                  </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+        <div class="sess-time">01.06 14:00</div>
+        <div class="sess-movie">Гладіатор 2</div>
+        <div class="sess-meta">Зала 2 — VIP · 2D</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 300 грн</span>
+                    <span class="price-vip">VIP: 550 грн</span>
+                  </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+        <div class="sess-time">01.06 18:00</div>
+        <div class="sess-movie">Оппенгеймер</div>
+        <div class="sess-meta">Зала 3 — Стандарт · 2D</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 200 грн</span>
+                  </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            </div>
   <div class="text-center mt-3">
     <a href="http://localhost:8888/course_work_CINEMA/course_work/public/schedule" class="btn btn-outline">Переглянути весь розклад →</a>
   </div>
@@ -88,7 +125,7 @@
         <p class="movie-genre">Бойовик/Пригоди</p>
         <div class="movie-meta">
           <span>⏱ 148 хв</span>
-          <span>⭐ 5.0</span>        </div>
+          <span>⭐ 10.0</span>        </div>
         <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/5" class="btn btn-outline btn-sm mt-1">Детальніше</a>
       </div>
     </div>
@@ -188,7 +225,7 @@
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = 'e235bfb86a50b14b6758d18d6b21fc2475c3d5d487bfb69a6460651b044cefcb';
+    const CSRF_TOKEN = 'b83600be50ce4fc1fc0476d5c716dfacb5cc80a87611d36db7d2ecff5a192fd0';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>

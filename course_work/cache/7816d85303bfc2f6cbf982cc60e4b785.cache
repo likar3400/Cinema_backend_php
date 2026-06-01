@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Вхід — CineMax</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="10919665d2de88a84ee24da120251c6ec77bc687aed323e68b8339c99206b4f0">
+    <meta name="csrf" content="b83600be50ce4fc1fc0476d5c716dfacb5cc80a87611d36db7d2ecff5a192fd0">
 </head>
 <body>
 
@@ -33,7 +33,7 @@
     <div class="auth-logo">🎬</div>
     <h1>Вхід до CineMax</h1>
         <form method="POST" action="http://localhost:8888/course_work_CINEMA/course_work/public/login" novalidate id="loginForm">
-      <input type="hidden" name="_csrf" value="10919665d2de88a84ee24da120251c6ec77bc687aed323e68b8339c99206b4f0">
+      <input type="hidden" name="_csrf" value="b83600be50ce4fc1fc0476d5c716dfacb5cc80a87611d36db7d2ecff5a192fd0">
       <div class="form-group">
         <label>Email</label>
         <input type="email" name="email" required value="" placeholder="your@email.com" autofocus id="loginEmail">
@@ -132,7 +132,7 @@ function togglePwd(id, btn) {
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = '10919665d2de88a84ee24da120251c6ec77bc687aed323e68b8339c99206b4f0';
+    const CSRF_TOKEN = 'b83600be50ce4fc1fc0476d5c716dfacb5cc80a87611d36db7d2ecff5a192fd0';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>
