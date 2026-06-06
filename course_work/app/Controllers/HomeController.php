@@ -18,7 +18,7 @@ class HomeController extends Controller
             'title'    => APP_NAME.' — Онлайн-продаж квитків',
             'movies'   => (new MovieModel())->getNowShowing(),
             'news'     => (new NewsModel())->getAll(true,1),
-            'sessions' => (new SessionModel())->getUpcoming(0,date('Y-m-d')),
+            'sessions' => (new SessionModel())->getUpcoming(0, ''),
         ]);
     }
 }

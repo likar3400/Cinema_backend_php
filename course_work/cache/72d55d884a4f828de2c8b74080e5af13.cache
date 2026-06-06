@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Круті знижки для родини — CineMax</title>
+    <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
+    <meta name="csrf" content="9effd7fad745eac9d7954e6362b3964b2643a23716d027e18449c1dae71a045b">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-inner">
+        <a href="http://localhost:8888/course_work_CINEMA/course_work/public/" class="brand">🎬 CineMax</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/"         >Головна</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies"   >Афіша</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/schedule" >Розклад</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/news"     class="active">Новини</a></li>
+            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/shop"     >🍿 Магазин</a></li>
+                            <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/login">Вхід</a></li>
+                <li><a href="http://localhost:8888/course_work_CINEMA/course_work/public/register" class="nav-register">Реєстрація</a></li>
+                    </ul>
+        <button class="burger" id="burger" aria-label="Меню">☰</button>
+    </div>
+</nav>
+
+
+<main class="main">
+    <div class="container">
+        <div class="news-detail">
+  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/news" class="btn btn-outline btn-sm">← Всі новини</a>
+  <h1>Круті знижки для родини</h1>
+  <p class="news-meta">📅 27.05.2026 13:34</p>
+  <div class="news-body">З серпня працює знижка -50% на квитки і дітям до 5 років квитки-безкоштовні.</div>
+</div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">🎬 CineMax</div>
+        <div class="footer-links">
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies">Афіша</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/schedule">Розклад</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/shop">Магазин</a>
+            <a href="http://localhost:8888/course_work_CINEMA/course_work/public/news">Новини</a>
+        </div>
+        <div class="footer-copy">© 2026 CineMax. Всі права захищено.</div>
+    </div>
+</footer>
+<script>
+    const CSRF_TOKEN = '9effd7fad745eac9d7954e6362b3964b2643a23716d027e18449c1dae71a045b';
+    const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
+</script>
+<script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>
+</body>
+</html>

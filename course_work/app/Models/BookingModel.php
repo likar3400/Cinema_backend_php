@@ -11,7 +11,7 @@ class BookingModel extends Model
         $this->db->beginTransaction();
         try {
             $existing = $this->db->fetchOne(
-                "SELECT id FROM bookings WHERE session_id=? AND seat_id=? AND status='confirmed' FOR UPDATE",
+                'SELECT id FROM bookings WHERE session_id=? AND seat_id=? FOR UPDATE',
                 [$sessionId, $seatId]
             );
             if ($existing) {
@@ -106,7 +106,6 @@ class BookingModel extends Model
              GROUP BY h.id ORDER BY total DESC",
             [$start,$end]
         );
-
 
         $topMovies = $this->db->fetchAll(
             "SELECT m.title, COUNT(b.id) AS cnt, COALESCE(SUM(b.price_paid),0) AS revenue

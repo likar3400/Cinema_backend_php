@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Розклад — CineMax</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f">
+    <meta name="csrf" content="0db1a1307c834fbe8df6c83156a45fddaac4f03034d90a6bc876ac93ac3541d4">
 </head>
 <body>
 
@@ -81,7 +81,7 @@
 
 <div class="filter-bar card">
   <div class="fg"><label>Дата</label>
-    <input type="date" id="fDate" value="2026-05-28" min="2026-05-28"></div>
+    <input type="date" id="fDate" value="2026-06-03" min="2026-06-03"></div>
   <div class="fg"><label>Фільм</label>
     <select id="fMovie">
       <option value="0">Всі фільми</option>
@@ -96,8 +96,82 @@
 </div>
 
 <div id="schedResult">
-  <p class="empty-msg">Сеансів не знайдено. Оберіть іншу дату.</p>
-</div>
+    <div class="day-group">
+    <h3 class="day-label">📅 03.06.2026</h3>
+    <div class="sessions-grid">
+            <div class="sess-card">
+                <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e5bdcc9f85.30753574.jpeg" alt="Оппенгеймер" class="sess-poster-sm">
+                <div class="sess-movie">Оппенгеймер</div>
+        <div class="sess-time">00:17</div>
+        <div class="sess-meta">Зала 3 — Стандарт · IMAX · 16+</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 200 грн</span>
+          <span class="price-vip">VIP: 250 грн</span>        </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+                <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e5689af5e7.14014562.jpeg" alt="Гладіатор 2" class="sess-poster-sm">
+                <div class="sess-movie">Гладіатор 2</div>
+        <div class="sess-time">08:07</div>
+        <div class="sess-meta">AC/DC(classic) · 3D · 16+</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 200 грн</span>
+          <span class="price-vip">VIP: 300 грн</span>        </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+                <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e62e4a53a9.30317160.jpeg" alt="Майкл" class="sess-poster-sm">
+                <div class="sess-movie">Майкл</div>
+        <div class="sess-time">08:10</div>
+        <div class="sess-meta">Зала 2 — VIP · 3D · 12+</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 230 грн</span>
+          <span class="price-vip">VIP: 300 грн</span>        </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+                <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e66411b524.20582882.jpg" alt="Дюна: Частина Друга" class="sess-poster-sm">
+                <div class="sess-movie">Дюна: Частина Друга</div>
+        <div class="sess-time">10:10</div>
+        <div class="sess-meta">AC/DC(classic) · IMAX · 12+</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 300 грн</span>
+          <span class="price-vip">VIP: 410 грн</span>        </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+                <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e66411b524.20582882.jpg" alt="Дюна: Частина Друга" class="sess-poster-sm">
+                <div class="sess-movie">Дюна: Частина Друга</div>
+        <div class="sess-time">12:00</div>
+        <div class="sess-meta">Зала 1 — IMAX · IMAX · 12+</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 340 грн</span>
+                  </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+                <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e5bdcc9f85.30753574.jpeg" alt="Оппенгеймер" class="sess-poster-sm">
+                <div class="sess-movie">Оппенгеймер</div>
+        <div class="sess-time">17:00</div>
+        <div class="sess-meta">Зала 2 — VIP · 2D · 16+</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 250 грн</span>
+          <span class="price-vip">VIP: 450 грн</span>        </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+                <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e62e4a53a9.30317160.jpeg" alt="Майкл" class="sess-poster-sm">
+                <div class="sess-movie">Майкл</div>
+        <div class="sess-time">20:30</div>
+        <div class="sess-meta">Зала 3 — Стандарт · 2D · 12+</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 200 грн</span>
+                  </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+          </div>
+  </div>
+  </div>
 
 <script>
 const IS_AUTH = false;
@@ -162,7 +236,7 @@ document.getElementById('fMovie').addEventListener('change',loadSched);
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = 'b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f';
+    const CSRF_TOKEN = '0db1a1307c834fbe8df6c83156a45fddaac4f03034d90a6bc876ac93ac3541d4';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>

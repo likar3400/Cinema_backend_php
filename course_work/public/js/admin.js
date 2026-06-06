@@ -3,7 +3,6 @@
   const path = window.location.pathname;
   document.querySelectorAll('.sb-link').forEach(a=>{
     const href = a.getAttribute('href')||'';
-    // точний збіг або починається з href (не для '/')
     if (href.length > 1 && path.startsWith(href)) a.classList.add('active');
     else if (href.endsWith('/admin') && path === '/admin') a.classList.add('active');
   });

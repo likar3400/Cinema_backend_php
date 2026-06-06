@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-
 define('ROOT_PATH', dirname(__DIR__));
 define('APP_PATH',  ROOT_PATH . '/app');
 define('VIEW_PATH', APP_PATH  . '/Views');

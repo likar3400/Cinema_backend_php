@@ -34,8 +34,8 @@ $router->post('/api/cart/remove',   'App\Controllers\CartController', 'remove');
 $router->post('/api/cart/checkout', 'App\Controllers\CartController', 'checkout');
 
 // JSON API
-$router->post('/api/booking',         'App\Controllers\BookingController', 'book');
 $router->post('/api/booking/cancel',  'App\Controllers\BookingController', 'cancel');
+$router->post('/api/booking',         'App\Controllers\BookingController', 'book');
 $router->get('/api/sessions',         'App\Controllers\MovieController',   'apiSessions');
 $router->post('/api/shop/order',      'App\Controllers\ShopController',    'order');
 

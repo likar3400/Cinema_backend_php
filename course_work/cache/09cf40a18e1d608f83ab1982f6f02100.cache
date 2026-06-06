@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Магазин — CineMax</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f">
+    <meta name="csrf" content="0db1a1307c834fbe8df6c83156a45fddaac4f03034d90a6bc876ac93ac3541d4">
 </head>
 <body>
 
@@ -64,15 +64,6 @@
                 <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
               </div>
     </div>
-        <div class="shop-card" data-id="4" data-price="165.00" data-name="Попкорн VIP">
-              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/pop corn.png" alt="Попкорн VIP" class="shop-img">
-            <div class="shop-info">
-        <h3>Попкорн VIP</h3>
-        <p class="shop-desc">Трюфельний попкорн у брендованому відрі</p>
-        <div class="shop-price"><strong>165 грн</strong></div>
-                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
-              </div>
-    </div>
       </div>
 </section>
 <section class="section">
@@ -111,15 +102,6 @@
         <h3>Кола 1л</h3>
         <p class="shop-desc">Велика Coca-Cola</p>
         <div class="shop-price"><strong>95 грн</strong></div>
-                <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
-              </div>
-    </div>
-        <div class="shop-card" data-id="13" data-price="120.00" data-name="Sprite">
-              <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/shop/shop_6a16e6dfa9fbd4.30939916.webp" alt="Sprite" class="shop-img">
-            <div class="shop-info">
-        <h3>Sprite</h3>
-        <p class="shop-desc">Освіжаючий напій</p>
-        <div class="shop-price"><strong>120 грн</strong></div>
                 <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm btn-full mt-1">Увійти для замовлення</a>
               </div>
     </div>
@@ -225,7 +207,7 @@ function showNotif(msg, isError = false) {
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = 'b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f';
+    const CSRF_TOKEN = '0db1a1307c834fbe8df6c83156a45fddaac4f03034d90a6bc876ac93ac3541d4';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>

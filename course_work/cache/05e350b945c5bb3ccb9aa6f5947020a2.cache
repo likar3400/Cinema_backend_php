@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Реєстрація — CineMax</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f">
+    <meta name="csrf" content="18a48fd6157f40cc10cf55dff9c2cd4ce2f8799c21cd397f4fd64eb88b15b3b5">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
 
     
     <form method="POST" action="http://localhost:8888/course_work_CINEMA/course_work/public/register" novalidate id="regForm">
-      <input type="hidden" name="_csrf" value="b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f">
+      <input type="hidden" name="_csrf" value="18a48fd6157f40cc10cf55dff9c2cd4ce2f8799c21cd397f4fd64eb88b15b3b5">
 
       <div class="form-row-2">
         <div class="form-group">
@@ -146,7 +146,7 @@ function togglePwd(id, btn) {
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = 'b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f';
+    const CSRF_TOKEN = '18a48fd6157f40cc10cf55dff9c2cd4ce2f8799c21cd397f4fd64eb88b15b3b5';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>

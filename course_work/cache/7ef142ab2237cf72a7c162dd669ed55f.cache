@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Афіша — CineMax</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f">
+    <meta name="csrf" content="0db1a1307c834fbe8df6c83156a45fddaac4f03034d90a6bc876ac93ac3541d4">
 </head>
 <body>
 
@@ -55,7 +55,7 @@
       <p class="movie-genre">Бойовик/Пригоди</p>
       <div class="movie-meta">
         <span>⏱ 148 хв</span>
-        <span>⭐ 5.0</span>        <span>📅 2026</span>      </div>
+        <span>⭐ 7.5</span>        <span>📅 2026</span>      </div>
       <p class="movie-desc">Рідлі Скотт повертається до Риму. Новий герой виходить на арену Колізею заради помсти і свободи.…</p>
       <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/5" class="btn btn-outline btn-sm">Детальніше</a>
     </div>
@@ -137,7 +137,7 @@
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = 'b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f';
+    const CSRF_TOKEN = '0db1a1307c834fbe8df6c83156a45fddaac4f03034d90a6bc876ac93ac3541d4';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>

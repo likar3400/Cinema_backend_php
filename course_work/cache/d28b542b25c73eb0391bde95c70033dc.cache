@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>CineMax — Онлайн-продаж квитків</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="b83600be50ce4fc1fc0476d5c716dfacb5cc80a87611d36db7d2ecff5a192fd0">
+    <meta name="csrf" content="ab2b716b04647f569cc64635c46707ced3f27ee83637ea39352dee2138cdb63d">
 </head>
 <body>
 
@@ -54,40 +54,60 @@
   <h2 class="section-title">🎬 Найближчі сеанси</h2>
   <div class="sessions-grid" id="today-sessions">
                 <div class="sess-card">
-        <div class="sess-time">01.06 10:00</div>
+        <div class="sess-time">03.06 10:10</div>
+        <div class="sess-movie">Дюна: Частина Друга</div>
+        <div class="sess-meta">AC/DC(classic) · IMAX</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 300 грн</span>
+                    <span class="price-vip">VIP: 410 грн</span>
+                  </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+        <div class="sess-time">03.06 12:00</div>
         <div class="sess-movie">Дюна: Частина Друга</div>
         <div class="sess-meta">Зала 1 — IMAX · IMAX</div>
         <div class="sess-price">
-          <span class="price-std">Стд: 320 грн</span>
+          <span class="price-std">Стд: 340 грн</span>
                   </div>
                   <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
               </div>
             <div class="sess-card">
-        <div class="sess-time">01.06 13:25</div>
-        <div class="sess-movie">Kermit and friend</div>
-        <div class="sess-meta">Зала 1 — IMAX · 2D</div>
-        <div class="sess-price">
-          <span class="price-std">Стд: 100 грн</span>
-                    <span class="price-vip">VIP: 200 грн</span>
-                  </div>
-                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
-              </div>
-            <div class="sess-card">
-        <div class="sess-time">01.06 14:00</div>
-        <div class="sess-movie">Гладіатор 2</div>
+        <div class="sess-time">03.06 17:00</div>
+        <div class="sess-movie">Оппенгеймер</div>
         <div class="sess-meta">Зала 2 — VIP · 2D</div>
         <div class="sess-price">
-          <span class="price-std">Стд: 300 грн</span>
-                    <span class="price-vip">VIP: 550 грн</span>
+          <span class="price-std">Стд: 250 грн</span>
+                    <span class="price-vip">VIP: 450 грн</span>
                   </div>
                   <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
               </div>
             <div class="sess-card">
-        <div class="sess-time">01.06 18:00</div>
-        <div class="sess-movie">Оппенгеймер</div>
+        <div class="sess-time">03.06 20:30</div>
+        <div class="sess-movie">Майкл</div>
         <div class="sess-meta">Зала 3 — Стандарт · 2D</div>
         <div class="sess-price">
           <span class="price-std">Стд: 200 грн</span>
+                  </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+        <div class="sess-time">05.06 10:00</div>
+        <div class="sess-movie">Дюна: Частина Друга</div>
+        <div class="sess-meta">Зала 1 — IMAX · IMAX</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 180 грн</span>
+                    <span class="price-vip">VIP: 280 грн</span>
+                  </div>
+                  <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
+              </div>
+            <div class="sess-card">
+        <div class="sess-time">05.06 14:00</div>
+        <div class="sess-movie">Дюна: Частина Друга</div>
+        <div class="sess-meta">Зала 3 — Стандарт · 2D</div>
+        <div class="sess-price">
+          <span class="price-std">Стд: 120 грн</span>
+                    <span class="price-vip">VIP: 200 грн</span>
                   </div>
                   <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
               </div>
@@ -102,20 +122,6 @@
   <h2 class="section-title">🎞 Зараз у прокаті</h2>
   <div class="movies-grid">
         <div class="movie-card">
-      <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/8">
-                  <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16ec927fb9a1.58523690.jpg" alt="Kermit and friend" class="movie-poster">
-              </a>
-      <div class="movie-body">
-        <span class="age-badge">0+</span>
-        <h3><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/8">Kermit and friend</a></h3>
-        <p class="movie-genre">Мультфільм</p>
-        <div class="movie-meta">
-          <span>⏱ 90 хв</span>
-          <span>⭐ 6.0</span>        </div>
-        <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/8" class="btn btn-outline btn-sm mt-1">Детальніше</a>
-      </div>
-    </div>
-        <div class="movie-card">
       <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/5">
                   <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e5689af5e7.14014562.jpeg" alt="Гладіатор 2" class="movie-poster">
               </a>
@@ -125,7 +131,7 @@
         <p class="movie-genre">Бойовик/Пригоди</p>
         <div class="movie-meta">
           <span>⏱ 148 хв</span>
-          <span>⭐ 10.0</span>        </div>
+          <span>⭐ 7.5</span>        </div>
         <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/5" class="btn btn-outline btn-sm mt-1">Детальніше</a>
       </div>
     </div>
@@ -157,6 +163,20 @@
         <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/6" class="btn btn-outline btn-sm mt-1">Детальніше</a>
       </div>
     </div>
+        <div class="movie-card">
+      <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/7">
+                  <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e64b90f8b7.05239017.jpg" alt="Мандалорець" class="movie-poster">
+              </a>
+      <div class="movie-body">
+        <span class="age-badge">12+</span>
+        <h3><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/7">Мандалорець</a></h3>
+        <p class="movie-genre">Фантастика/Пригоди</p>
+        <div class="movie-meta">
+          <span>⏱ 135 хв</span>
+          <span>⭐ 8.7</span>        </div>
+        <a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies/7" class="btn btn-outline btn-sm mt-1">Детальніше</a>
+      </div>
+    </div>
       </div>
   <div class="text-center mt-3"><a href="http://localhost:8888/course_work_CINEMA/course_work/public/movies" class="btn btn-outline">Всі фільми →</a></div>
 </section>
@@ -177,11 +197,6 @@
 <section class="section">
   <h2 class="section-title">📰 Новини</h2>
   <div class="news-grid">
-        <a href="http://localhost:8888/course_work_CINEMA/course_work/public/news/6" class="news-card">
-      <h3>Сімейні літні знижки до -50%</h3>
-      <p>Сім&#039;ям даруємо знижки на квитки та снеки і напої.Також дітям до 5-років вхід безкоштовний…</p>
-      <span class="news-date">27.05.2026</span>
-    </a>
         <a href="http://localhost:8888/course_work_CINEMA/course_work/public/news/5" class="news-card">
       <h3>Круті знижки для родини</h3>
       <p>З серпня працює знижка -50% на квитки і дітям до 5 років квитки-безкоштовні.…</p>
@@ -225,7 +240,7 @@
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = 'b83600be50ce4fc1fc0476d5c716dfacb5cc80a87611d36db7d2ecff5a192fd0';
+    const CSRF_TOKEN = 'ab2b716b04647f569cc64635c46707ced3f27ee83637ea39352dee2138cdb63d';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>

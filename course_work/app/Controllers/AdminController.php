@@ -31,7 +31,7 @@ class AdminController extends Controller
         $this->reviews  = new ReviewModel();
     }
 
-
+    // ── Dashboard ──────────────────────────────────────────
     public function dashboard(array $p): void
     {
         $this->requireAdmin(); Response::noCache();
@@ -45,6 +45,7 @@ class AdminController extends Controller
         ], 'partials/admin_layout');
     }
 
+    // ── Stats module ────────────────────────────────────────
     public function stats(array $p): void
     {
         $this->requireAdmin(); Response::noCache();
@@ -63,6 +64,7 @@ class AdminController extends Controller
         $this->json($this->bookings->monthlyStats($month));
     }
 
+    // ── Movies CRUD ────────────────────────────────────────
     public function movies(array $p): void
     {
         $this->requireAdmin();
@@ -95,6 +97,7 @@ class AdminController extends Controller
         $data['poster'] = $this->handleUpload('poster');
         $this->movies->create($data);
         PageBuffer::invalidate('movies'); PageBuffer::invalidate('home');
+        // 303 PRG після POST
         Response::redirect('/admin/movies', 303);
     }
 
@@ -118,6 +121,7 @@ class AdminController extends Controller
         if ($poster) $data['poster'] = $poster;
         $this->movies->update($id,$data);
         PageBuffer::invalidate("movie_d{$id}"); PageBuffer::invalidate('movies');
+        // 303 PRG
         Response::redirect('/admin/movies', 303);
     }
 
@@ -127,15 +131,17 @@ class AdminController extends Controller
         $id = (int)($p['id']??0);
         if ($this->request->isAjax()) {
             $data = $this->request->json();
-            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??'')) $this->json(['success'=>false],403);
+            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??$data['_csrf']??'')) $this->json(['success'=>false],403);
             $ok = $this->movies->delete($id);
             if ($ok) PageBuffer::invalidate('movies');
             $this->json(['success'=>$ok]);
         }
         $this->movies->delete($id); PageBuffer::invalidate('movies');
+        // 303 після видалення — PRG
         Response::redirect('/admin/movies', 303);
     }
 
+    // ── Sessions CRUD ──────────────────────────────────────
     public function sessions(array $p): void
     {
         $this->requireAdmin();
@@ -189,13 +195,14 @@ class AdminController extends Controller
         $this->requireAdmin(); $id=(int)($p['id']??0);
         if ($this->request->isAjax()) {
             $data=$this->request->json();
-            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??'')) $this->json(['success'=>false],403);
+            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??$data['_csrf']??'')) $this->json(['success'=>false],403);
             $this->json(['success'=>$this->sessions->delete($id)]);
         }
         $this->sessions->delete($id);
         Response::redirect('/admin/sessions', 303);
     }
 
+    // ── Bookings ────────────────────────────────────────────
     public function bookings(array $p): void
     {
         $this->requireAdmin();
@@ -214,13 +221,14 @@ class AdminController extends Controller
         $id = (int)($p['id']??0);
         if ($this->request->isAjax()) {
             $data=$this->request->json();
-            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??'')) $this->json(['success'=>false],403);
+            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??$data['_csrf']??'')) $this->json(['success'=>false],403);
             $this->json(['success'=>$this->bookings->cancel($id)]);
         }
         $this->bookings->cancel($id);
         Response::redirect('/admin/bookings', 303);
     }
 
+    // ── Users CRUD ─────────────────────────────────────────
     public function users(array $p): void
     {
         $this->requireAdmin();
@@ -276,13 +284,14 @@ class AdminController extends Controller
         $this->requireAdmin(); $id=(int)($p['id']??0);
         if ($this->request->isAjax()) {
             $data=$this->request->json();
-            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??'')) $this->json(['success'=>false],403);
+            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??$data['_csrf']??'')) $this->json(['success'=>false],403);
             $this->json(['success'=>$this->users->delete($id)]);
         }
         $this->users->delete($id);
         Response::redirect('/admin/users', 303);
     }
 
+    // ── News CRUD ──────────────────────────────────────────
     public function news(array $p): void
     {
         $this->requireAdmin();
@@ -327,13 +336,14 @@ class AdminController extends Controller
         $this->requireAdmin(); $id=(int)($p['id']??0);
         if ($this->request->isAjax()) {
             $data=$this->request->json();
-            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??'')) $this->json(['success'=>false],403);
+            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??$data['_csrf']??'')) $this->json(['success'=>false],403);
             $this->json(['success'=>$this->news->delete($id)]);
         }
         $this->news->delete($id); PageBuffer::invalidate('news');
         Response::redirect('/admin/news', 303);
     }
 
+    // ── Halls CRUD ─────────────────────────────────────────
     public function halls(array $p): void
     { $this->requireAdmin(); $this->view('admin/halls/index',['title'=>'Зали — Адмін','halls'=>$this->halls->getAll()],'partials/admin_layout'); }
 
@@ -359,12 +369,14 @@ class AdminController extends Controller
         $this->requireAdmin(); $id=(int)($p['id']??0);
         if ($this->request->isAjax()) {
             $data=$this->request->json();
-            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??'')) $this->json(['success'=>false],403);
+            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??$data['_csrf']??'')) $this->json(['success'=>false],403);
             $this->json(['success'=>$this->halls->delete($id)]);
         }
         $this->halls->delete($id);
         Response::redirect('/admin/halls', 303);
     }
+
+    // ── Shop items CRUD ────────────────────────────────────
     public function shopItems(array $p): void
     {
         $this->requireAdmin();
@@ -414,12 +426,14 @@ class AdminController extends Controller
         $this->requireAdmin(); $id=(int)($p['id']??0);
         if ($this->request->isAjax()) {
             $data=$this->request->json();
-            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??'')) $this->json(['success'=>false],403);
+            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??$data['_csrf']??'')) $this->json(['success'=>false],403);
             $this->json(['success'=>$this->shop->deleteItem($id)]);
         }
         $this->shop->deleteItem($id);
         Response::redirect('/admin/shop', 303);
     }
+
+    // ── Reviews admin ──────────────────────────────────────
     public function reviews(array $p): void
     {
         $this->requireAdmin(); Response::noCache();
@@ -438,7 +452,7 @@ class AdminController extends Controller
         $id = (int)($p['id']??0);
         if ($this->request->isAjax()) {
             $data=$this->request->json();
-            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??'')) $this->json(['success'=>false],403);
+            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??$data['_csrf']??'')) $this->json(['success'=>false],403);
             $review = $this->reviews->find($id);
             if ($review) PageBuffer::invalidate("movie_d{$review['movie_id']}");
             $this->json(['success'=>$this->reviews->delete($id)]);
@@ -447,6 +461,7 @@ class AdminController extends Controller
         Response::redirect('/admin/reviews', 303);
     }
 
+    // ── Movie categories ────────────────────────────────────
     public function categories(array $p): void
     {
         $this->requireAdmin();
@@ -461,6 +476,7 @@ class AdminController extends Controller
         $this->requireAdmin(); $this->verifyCsrf();
         $name = trim($this->request->post('name',''));
         if (empty($name)) { Response::redirect('/admin/categories', 303); }
+        // 409 — дублікат
         if ($this->movies->categoryExists($name)) {
             Response::status(409);
             Session::flash('error', 'Категорія вже існує.');
@@ -477,7 +493,7 @@ class AdminController extends Controller
         $id = (int)($p['id']??0);
         if ($this->request->isAjax()) {
             $data=$this->request->json();
-            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??'')) $this->json(['success'=>false],403);
+            if (!hash_equals(Session::csrfToken(),$data[CSRF_TOKEN_NAME]??$data['_csrf']??'')) $this->json(['success'=>false],403);
             $this->json(['success'=>$this->movies->deleteCategory($id)]);
         }
         $this->movies->deleteCategory($id);

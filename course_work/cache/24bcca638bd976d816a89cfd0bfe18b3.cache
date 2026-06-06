@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Новини — CineMax</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f">
+    <meta name="csrf" content="890ff1c61c06b8943fa5ad313888a27705106a9b05d9743ecea71d6d22acc926">
 </head>
 <body>
 
@@ -77,7 +77,7 @@
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = 'b6b1d16dcbc03157831796272ed491dbcb5e3a46398daa271bb12b8aa07f337f';
+    const CSRF_TOKEN = '890ff1c61c06b8943fa5ad313888a27705106a9b05d9743ecea71d6d22acc926';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>

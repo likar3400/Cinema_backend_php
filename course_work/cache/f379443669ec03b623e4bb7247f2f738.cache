@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Майкл — CineMax</title>
+    <title>Мандалорець — CineMax</title>
     <link rel="stylesheet" href="http://localhost:8888/course_work_CINEMA/course_work/public/css/style.css">
-    <meta name="csrf" content="890ff1c61c06b8943fa5ad313888a27705106a9b05d9743ecea71d6d22acc926">
+    <meta name="csrf" content="0db1a1307c834fbe8df6c83156a45fddaac4f03034d90a6bc876ac93ac3541d4">
 </head>
 <body>
 
@@ -31,54 +31,52 @@
         
 <div class="movie-detail">
     <div class="detail-top">
-                    <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e62e4a53a9.30317160.jpeg" alt="Майкл" class="detail-poster">
+                    <img src="http://localhost:8888/course_work_CINEMA/course_work/public/images/posters/poster_6a16e64b90f8b7.05239017.jpg" alt="Мандалорець" class="detail-poster">
                 <div class="detail-info">
             <span class="age-badge age-badge-lg">12+</span>
-            <h1>Майкл</h1>
-            <p class="detail-genre">🎭 Біографія/Музика</p>
+            <h1>Мандалорець</h1>
+            <p class="detail-genre">🎭 Фантастика/Пригоди</p>
             <p>
-                ⏱ 148 хвилин
-                                    &nbsp;⭐ <span id="movieRating">10</span>/10
-                                            <small style="color:var(--muted)">
-                            (1 відгук)
-                        </small>
+                ⏱ 135 хвилин
+                                    &nbsp;⭐ <span id="movieRating">8.7</span>/10
                                                 </p>
-                            <p>📅 20.06.2026</p>
-                        <p class="detail-desc">Байопік про життя та творчість Майкла Джексона — короля поп-музики. Фільм охоплює злети та падіння однієї з найвидатніших зірок в історії музики.</p>
-                            <a href="https://youtu.be/3zOLzsbOleM?si=9_xxMXuTTExPXn4R" class="btn btn-outline" target="_blank">▶ Трейлер</a>
+                            <p>📅 10.07.2026</p>
+                        <p class="detail-desc">Усамітнений воїн-мандалорець подорожує галактикою разом із маленьким Ґроґу — загадковим істотою з могутніми силами Джедаїв.</p>
+                            <a href="https://youtu.be/IHWlvwu8t1w?si=z76_EpEFMWN6zLmE" class="btn btn-outline" target="_blank">▶ Трейлер</a>
                     </div>
     </div>
 
     <h2 class="section-title mt-3">Найближчі сеанси</h2>
     <div class="filter-bar">
         <label>Дата:</label>
-        <input type="date" id="fDate" value="2026-06-02" min="2026-06-02">
+        <input type="date" id="fDate" value="2026-06-03" min="2026-06-03">
     </div>
 
     <div class="sessions-grid" id="sessContainer">
                     <div class="sess-card">
-                <div class="sess-time">03.06 20:30</div>
-                <div class="sess-meta">Зала 3 — Стандарт · 2D · uk</div>
+                <div class="sess-time">12.07 14:00</div>
+                <div class="sess-meta">Зала 1 — IMAX · IMAX · uk</div>
                 <div class="sess-price">
-                    <span class="price-std">Стд: 200 грн</span>
+                    <span class="price-std">Стд: 195 грн</span>
+                                            <span class="price-vip">VIP: 295 грн</span>
                                     </div>
                                     <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
                             </div>
                     <div class="sess-card">
-                <div class="sess-time">22.06 13:00</div>
+                <div class="sess-time">12.07 18:00</div>
                 <div class="sess-meta">Зала 3 — Стандарт · 2D · uk</div>
                 <div class="sess-price">
-                    <span class="price-std">Стд: 125 грн</span>
-                                            <span class="price-vip">VIP: 200 грн</span>
+                    <span class="price-std">Стд: 135 грн</span>
+                                            <span class="price-vip">VIP: 215 грн</span>
                                     </div>
                                     <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
                             </div>
                     <div class="sess-card">
-                <div class="sess-time">22.06 17:00</div>
-                <div class="sess-meta">Зала 2 — VIP · 2D · uk</div>
+                <div class="sess-time">13.07 20:00</div>
+                <div class="sess-meta">Зала 3 — Стандарт · 2D · uk</div>
                 <div class="sess-price">
-                    <span class="price-std">Стд: 160 грн</span>
-                                            <span class="price-vip">VIP: 260 грн</span>
+                    <span class="price-std">Стд: 135 грн</span>
+                                            <span class="price-vip">VIP: 215 грн</span>
                                     </div>
                                     <a href="http://localhost:8888/course_work_CINEMA/course_work/public/login" class="btn btn-outline btn-sm">Увійти</a>
                             </div>
@@ -88,22 +86,14 @@
     <h2 class="section-title">💬 Відгуки</h2>
 
     <div id="reviewList">
-                                    <div class="review-card" id="rc-2">
-                    <div class="review-header">
-                        <strong>Ковтун Валентин</strong>
-                        <span class="review-stars">⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</span>
-                        <span class="review-rating">10/10</span>
-                        <span class="review-date">27.05.2026</span>
-                                            </div>
-                    <p class="review-body"></p>
-                </div>
-                        </div>
+                    <p class="empty-msg" id="noReviews">Відгуків ще немає. Будьте першим!</p>
+            </div>
 
             <p class="mt-2"><a href="http://localhost:8888/course_work_CINEMA/course_work/public/login">Увійдіть</a>, щоб залишити відгук.</p>
     </section>
 
 <script>
-    const MOVIE_ID   = 6;
+    const MOVIE_ID   = 7;
     const IS_AUTH    = false;
     const APP_URL_JS = 'http://localhost:8888/course_work_CINEMA/course_work/public';
     const CSRF       = document.querySelector('meta[name="csrf"]')?.getAttribute('content') || '';
@@ -221,7 +211,7 @@
     </div>
 </footer>
 <script>
-    const CSRF_TOKEN = '890ff1c61c06b8943fa5ad313888a27705106a9b05d9743ecea71d6d22acc926';
+    const CSRF_TOKEN = '0db1a1307c834fbe8df6c83156a45fddaac4f03034d90a6bc876ac93ac3541d4';
     const APP_URL    = 'http://localhost:8888/course_work_CINEMA/course_work/public';
 </script>
 <script src="http://localhost:8888/course_work_CINEMA/course_work/public/js/app.js"></script>

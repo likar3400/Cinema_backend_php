@@ -71,8 +71,6 @@ class ShopModel extends Model
              WHERE o.user_id=? GROUP BY o.id ORDER BY o.created_at DESC', [$userId]
         );
     }
-
-    // ── Cart methods ──────────────────────────────────────────
     public function getCartItems(int $userId): array
     {
         return $this->db->fetchAll(
